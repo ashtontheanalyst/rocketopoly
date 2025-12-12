@@ -22,6 +22,7 @@ body{
     padding: 0.5rem 1.5rem;
     font-size: 3rem;
     font-weight: bolder;
+    text-align: center;
 }
 
 #moneyBadge{
@@ -30,4 +31,57 @@ body{
 #playerBadge{
     font-size: 2rem;
     bottom: -2rem;
+}
+#bankerBadge{
+    background-color: #213c13;
+    color: #f6fef2;
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem;
+    width: 60vw;
+    bottom: 1.5rem;
+}
+
+
+.btnRow{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 100px;
+    width: 68vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+}
+
+#row1{
+    top: 2rem;
+}
+#row2{
+    top: 10rem;
+}
+#row3{
+    top: 18rem;
+}
+
+.optBtn{
+    height: 6rem;
+    width: 6rem;
+    background-color: #ddd;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.optBtn:hover{
+    transition: 0.3s;
+    box-shadow: 0px 0px 7px #696969;
+}
+
+#btnCollect200{
+    background-color: #213c13;
+    color: #fff;
 }

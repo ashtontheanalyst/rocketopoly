@@ -10,9 +10,27 @@
 <body>
     <div id="playerBox" style="border: 10px solid #500de0;">
         <div id="moneyBadge" class="badge" style="color: #500de0;">${{amount}}</div>
-        <div id="playerBadge" class="badge" style="color: #500de0;">Player 3</div>
+        <div id="playerBadge" class="badge" style="color: #500de0;">{{player}}</div>
 
+        <div id="row1" class="btnRow">
+            <button class="optBtn" id="btnCollect200">GET $200</button>
+            <button class="optBtn">*</button>
+            <button class="optBtn">*</button>
+        </div>
+        <div id="row2" class="btnRow">
+            <button class="optBtn">*</button>
+            <button class="optBtn">*</button>
+            <button class="optBtn">*</button>
+        </div>
+        <div id="row3" class="btnRow">
+            <button class="optBtn">*</button>
+            <button class="optBtn">*</button>
+            <button class="optBtn">*</button>
+        </div>
 
+        {% if banker %}
+            <div id="bankerBadge" class="badge">Banker</div>
+        {% endif %}
     </div>
 </body>
 </html>

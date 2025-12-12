@@ -22,9 +22,18 @@ def landing():
 def player():
     player = request.args.get("player")
     playerKey = player.lower().replace(" ", "")     # Changes i.e. Player 1 to player1
+    
+    banker = request.args.get("banker")
+    if banker == "Yes":
+        banker = True
+    else:
+        banker = False
 
     amount = getMoney(playerKey)
-    return render_template(f"{playerKey}.html", amount=amount)
+    return render_template(f"{playerKey}.html",
+                                amount=amount,
+                                player=player,
+                                banker=banker)
 
 
 
