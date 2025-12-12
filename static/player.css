@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6fef2;
+}
+
+
+#playerBox{
+    position: absolute;
+    top: 9vh;
+    left: 9vw;
+    height: 78vh;
+    width: 78vw;
+    border-radius: 20px;
+}
+
+.badge{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f6fef2;
+    padding: 0.5rem 1.5rem;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+#moneyBadge{
+    top: -2.5rem;
+}
+#playerBadge{
+    font-size: 2rem;
+    bottom: -2rem;
+}

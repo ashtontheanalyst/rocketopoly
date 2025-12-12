@@ -48,12 +48,13 @@
     const bankerPopCont = document.getElementById('bankerPopCont');
     const playerOptCont = document.getElementById('playerOptCont');
     const landingHeader = document.getElementById('landingHeader');
+    let player;
     
     // Adding a listener to each player, once you select one it'll ask if you want to be the banker
     document.querySelectorAll('.indivPlayOpt').forEach((box) => {
         box.addEventListener('click', () => {
             // Pulls who the player is and updates the box to be specific
-            const player = box.querySelector('p').innerText;
+            player = box.querySelector('p').innerText;
             document.getElementById('bankerQuestion').innerText = `Howdy ${player}! Are you the banker?`;
 
             // Makes the popup box appear and blurs everything else out
@@ -70,5 +71,17 @@
             document.getElementById('playerOptCont').classList.remove('blur');
             document.getElementById('landingHeader').classList.remove('blur');
         }
+    });
+
+    document.querySelectorAll('.popupBtn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            // If you click on the 'Yes' btn meaning you want to be the banker, else you don't
+            // Either way we re-direct to their player page
+            if (btn.innerText === "Yes") {
+                window.location.href = `/player?player=${player}&banker=Yes`;
+            } else {
+                window.location.href = `/player?player=${player}&banker=No`;
+            }
+        });
     });
 </script>
