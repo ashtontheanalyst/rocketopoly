@@ -1,0 +1,211 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6fef2;
+}
+
+
+#landingHeader{
+    position: sticky;
+    top: 0;
+    left: 0;
+    min-height: 100px;
+    width: 100vw;
+    background-color: #213c13;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#landingHeader h1{
+    font-size: 3rem;
+    color: rgb(238, 238, 238);
+}
+
+
+/*All the players container*/
+#playerOptCont{
+    margin-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5vh;
+}
+
+
+/*Class to define the player option boxes*/
+.indivPlayOpt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+    width: 30vw;
+    min-height: 60px;
+    height: 10vh;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.indivPlayOpt p{
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+
+/*Each player's colors and specific actions*/
+#player1Opt{
+    background-color: #e2f4fe;
+    border: 5px solid #378bf1;
+}
+#player1Opt p{
+    color: #378bf1;
+}
+#player1Opt:hover{
+    background-color: white;
+    transition: 0.2s;
+    box-shadow: 0px 0px 50px #e2f4fe;
+}
+#player1Opt:active{
+    transition: 0.2s;
+    background-color: #378bf1;
+}
+#player1Opt:active p{
+    transition: 0.2s;
+    color: white;
+}
+
+#player2Opt{
+    background-color: #fce2f0;
+    border: 5px solid #ff5cbe;
+}
+#player2Opt p{
+    color: #ff5cbe;
+}
+#player2Opt:hover{
+    background-color: white;
+    transition: 0.2s;
+    box-shadow: 0px 0px 50px #fce2f0;
+}
+#player2Opt:active{
+    transition: 0.2s;
+    background-color: #ff5cbe;
+}
+#player2Opt:active p{
+    transition: 0.2s;
+    color: white;
+}
+
+#player3Opt{
+    background-color: #e8deff;
+    border: 5px solid #500de0;
+}
+#player3Opt p{
+    color: #500de0;
+}
+#player3Opt:hover{
+    background-color: white;
+    transition: 0.2s;
+    box-shadow: 0px 0px 50px #e8deff;
+}
+#player3Opt:active{
+    transition: 0.2s;
+    background-color: #500de0;
+}
+#player3Opt:active p{
+    transition: 0.2s;
+    color: white;
+}
+
+#player4Opt{
+    background-color: #f7deba;
+    border: 5px solid #fd7701;
+}
+#player4Opt p{
+    color: #fd7701;
+}
+#player4Opt:hover{
+    background-color: white;
+    transition: 0.2s;
+    box-shadow: 0px 0px 50px #f7deba;
+}
+#player4Opt:active{
+    transition: 0.2s;
+    background-color: #fd7701;
+}
+#player4Opt:active p{
+    transition: 0.2s;
+    color: white;
+}
+
+
+/*Banker question pop up little window after selecting a player*/
+.blur{
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+#bankerPopCont{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+#bankerPopCont.hidden{
+    display: none;
+}
+
+.bankerPopup{
+    margin: 0;
+    width: 60vw;
+    padding: 30px 20px;
+    text-align: center;
+    background: #f6fef2;
+    color: #213c13;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgb(246, 254, 242, 0.2);
+}
+.bankerPopup h2{
+    font-size: 1.75rem;
+}
+
+.popupBtn{
+    min-width: 100px;
+    min-height: 60px;
+    width: 15vw;
+    height: 8vh;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#yesBankBtn{
+    background-color: #5fbf5d;
+    color: #213c13;
+}
+#yesBankBtn:active{
+    background-color: #213c13;
+    color: #5fbf5d;
+}
+
+#noBankBtn{
+    background-color: #ed2c2c;
+    color: #870202;
+}
+#noBankBtn:active{
+    background-color: #870202;
+    color: #ed2c2c;
+}

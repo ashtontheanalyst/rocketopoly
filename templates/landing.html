@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../static/landing.css"><!--CSS-->
+</head>
+<body>
+    <!--Header sticky bar soon-->
+    <div id="landingHeader">
+        <h1>Choose Your Player!</h1>
+    </div>
+
+    <!--Player options-->
+    <div id="playerOptCont">
+        <div id="player1Opt" class="indivPlayOpt">
+            <p>Player 1</p>
+        </div>
+
+        <div id="player2Opt" class="indivPlayOpt">
+            <p>Player 2</p>
+        </div>
+
+        <div id="player3Opt" class="indivPlayOpt">
+            <p>Player 3</p>
+        </div>
+
+        <div id="player4Opt" class="indivPlayOpt">
+            <p>Player 4</p>
+        </div>
+    </div>
+
+    <!--Hidden pop up that will ask the user if they are the banker once player is selected-->
+    <div id="bankerPopCont" class="hidden">
+        <div class="bankerPopup">
+            <h2 id="bankerQuestion"></h2>
+            <div style="display: flex; gap: 4vw;">
+                <button id="yesBankBtn" class="popupBtn">Yes</button>
+                <button id="noBankBtn" class="popupBtn">No</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const bankerPopCont = document.getElementById('bankerPopCont');
+    const playerOptCont = document.getElementById('playerOptCont');
+    const landingHeader = document.getElementById('landingHeader');
+    
+    // Adding a listener to each player, once you select one it'll ask if you want to be the banker
+    document.querySelectorAll('.indivPlayOpt').forEach((box) => {
+        box.addEventListener('click', () => {
+            // Pulls who the player is and updates the box to be specific
+            const player = box.querySelector('p').innerText;
+            document.getElementById('bankerQuestion').innerText = `Howdy ${player}! Are you the banker?`;
+
+            // Makes the popup box appear and blurs everything else out
+            bankerPopCont.classList.remove('hidden');
+            playerOptCont.classList.add('blur');
+            landingHeader.classList.add('blur');
+        });
+    });
+
+    // If you click outside the pop-up, close it
+    bankerPopCont.addEventListener('click', (e) => {
+        if (e.target === bankerPopCont) {
+            bankerPopCont.classList.add('hidden');
+            document.getElementById('playerOptCont').classList.remove('blur');
+            document.getElementById('landingHeader').classList.remove('blur');
+        }
+    });
+</script>
